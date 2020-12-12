@@ -13,5 +13,11 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Service Rule | Instagram App"
   end
+  
+  test "should get contact" do
+    get contact_path
+    assert_response :success
+    assert_select "title", "Contact | Instagram App"
+  end
 
 end

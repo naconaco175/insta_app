@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
   def service_rule
   end
   
+  def contact
+  end
+  
 end
