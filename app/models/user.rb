@@ -9,4 +9,6 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+  validates :phone_number, length: { maximum: 11 }, uniqueness: true
+  validates :profile, length: { maximum: 300 }
 end
