@@ -9,6 +9,14 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
-  validates :phone_number, length: { maximum: 11 }, uniqueness: true
+  validates :phone_number, length: { maximum: 11 }
   validates :profile, length: { maximum: 300 }
+  
+  # 渡された文字列のハッシュ値を返す
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+  
 end
