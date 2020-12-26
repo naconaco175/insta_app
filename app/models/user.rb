@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :user_name, presence: true, length: { maximum: 50 },
                     uniqueness: true
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :phone_number, length: { maximum: 11 }
   validates :profile, length: { maximum: 300 }
   

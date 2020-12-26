@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'sessions/new'
   root 'static_pages#home'
   get '/service_rule', to:  'static_pages#service_rule'
   get '/contact',      to:  'static_pages#contact'
