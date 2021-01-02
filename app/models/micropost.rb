@@ -12,10 +12,6 @@ class Micropost < ApplicationRecord
                                       
   # 表示用のリサイズ済み画像を返す
   def display_image
-<<<<<<< HEAD
     image.variant(resize_to_fill: [200, 200])
-=======
-    image.variant(resize_to_limit: [300, 300])
->>>>>>> 4fa9f4812233bbaa7433b83bcc3bd979585f26ad
   end
 end
