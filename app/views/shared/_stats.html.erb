@@ -6,10 +6,19 @@
     </strong>
     フォロー
   </a>
+</div>
+<div class="stats">
   <a href="<%= followers_user_path(@user) %>">
     <strong id="followers" class="stat">
       <%= @user.followers.count %>
     </strong>
     フォロワー
+  </a>
+</div>
+<div class="stats">
+    <p class='profile-title'>自己紹介</p>
+    <p class="profile">
+      <%= @user.profile %>
+    </p>
   </a>
 </div>

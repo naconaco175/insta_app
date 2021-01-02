@@ -186,6 +186,15 @@ aside {
   padding: 0;
 }
 
+.profile {
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+.profile-title{
+  padding-top: 10px;
+}
+
 
 /* forms */
 
@@ -247,7 +256,7 @@ input {
   list-style: none;
   padding: 0;
   li {
-    padding: 10px 0;
+    padding: 10px 10px;
     border-top: 1px solid #e8e8e8;
   }
   .user {
