@@ -1,0 +1,10 @@
+<h2>インスタクローンアプリ</h2>
+
+<p><%= @user.name %>さん</p><br>
+
+<p>
+インスタクローンアプリへようこそ! アカウント有効化のために下のリンクをクリックしてください。
+</p>
+
+<%= link_to "Account activation", edit_account_activation_url(@user.activation_token,
+                                                  email: @user.email) %>

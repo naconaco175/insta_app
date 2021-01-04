@@ -1,5 +1,21 @@
-<div class="center jumbotron">
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-2">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+    </aside>
+    <div class="col-md-10">
+      <h3>最新の投稿</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %><div class="center jumbotron">
     <h1>ようこそInstagramAppへ</h1>
     <h2>これはホームページです</h2>
-    <%= link_to "Sign up now!", "#", class: "btn btn-lg btn-primary" %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
+<% end %>
