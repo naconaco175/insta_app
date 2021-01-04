@@ -1,0 +1,11 @@
+<% if !Favorite.exists?(user_id: current_user.id, micropost_id: @micropost.id) %>
+  <%= link_to favorites_user_path(current_user), method: :post, remote: true, class:"like-btn" do %>
+    <i class="fas fa-star star-icon1"></i>
+  <% end %>
+  <span class="star-count1"><%= @micropost.favorites.count %></span>
+<% else %>
+  <%= link_to favorites_user_path(current_user), method: :delete, remote: true, class:"like-btn" do %>
+    <i class="fas fa-star star-icon2"></i>
+  <% end %>
+  <span class="star-count2"><%= @micropost.favorites.count %></span>
+<% end %>

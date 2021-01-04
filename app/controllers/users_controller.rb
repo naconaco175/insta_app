@@ -13,6 +13,13 @@ class UsersController < ApplicationController
     redirect_to root_url and return unless @user.activated?
   end
   
+  def favorites
+    @user = User.find(params[:id])
+    @posts = @user.microposts
+    favorites = Favorite.where(user_id: params[:id]).pluck(:micropost_id)  # ログイン中のユーザーのお気に入りのpost_idカラムを取得
+    @favorite_list = Micropost.find(favorites)
+  end
+  
   def new
     @user = User.new
   end
